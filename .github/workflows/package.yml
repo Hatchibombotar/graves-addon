@@ -1,0 +1,24 @@
+name: Build and upload MC Addon
+
+
+on:
+  workflow_dispatch:
+
+jobs:
+    build:
+        runs-on: ubuntu-latest
+        steps:
+            - uses: actions/checkout@v2
+            - name: Build mcaddon files.
+              run: |
+                  tmp=(*_BP)
+                  tmp2=(*_RP)
+                  zip -r "release.mcaddon" "$tmp" "$tmp2"
+            - name: Upload Release File
+              uses: djnicholson/release-action@v2.11
+              with:
+                  token: ${{ secrets.GITHUB_TOKEN }}
+                  release-name: 'Graves Addon'
+                  tag-name: 'latest-build'
+                  asset-name: 'release.mcpack'
+                  file: 'release.mcpack'
