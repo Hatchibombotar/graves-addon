@@ -20,5 +20,5 @@ jobs:
                   token: ${{ secrets.GITHUB_TOKEN }}
                   release-name: 'Graves Addon'
                   tag-name: 'latest-build'
-                  asset-name: 'release.mcpack'
-                  file: 'release.mcpack'
+                  asset-name: 'release.mcaddon'
+                  file: 'release.mcaddon'
