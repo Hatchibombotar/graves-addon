@@ -15,4 +15,4 @@ Compatible with all other addons!
 
 [Licence](./licence.md)
 
-[Download](https://github.com/Hatchibombotar/graves-addon/releases/download/latest-build/release.mcpack)
+[Download](https://github.com/Hatchibombotar/graves-addon/releases/download/latest-build/release.addon)
