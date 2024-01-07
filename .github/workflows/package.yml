@@ -1,8 +1,9 @@
 name: Build and upload MC Addon
 
-
 on:
-  workflow_dispatch:
+  push:
+    tags:
+      - 'v*' # Push events to matching v*, i.e. v1.0, v20.15.10
 
 jobs:
     build:
@@ -13,11 +14,10 @@ jobs:
               uses: Bedrock-OSS/regolith-action@v1.0.3
               with:
                 profile: build
-            - name: Upload Release File
-              uses: djnicholson/release-action@v2.11
+            - name: Release
+              uses: softprops/action-gh-release@v1
               with:
-                  token: ${{ secrets.GITHUB_TOKEN }}
-                  release-name: 'Graves Addon'
-                  tag-name: 'latest-build'
-                  asset-name: 'graves.mcaddon'
-                  file: 'build/graves.mcaddon'
+                files: |
+                  build/graves.mcaddon
+                  readme.md
+                  license.md
