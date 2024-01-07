@@ -1,7 +1,7 @@
 # Graves Add-On
 Have you ever gone out on an adventure only to die and have all your stuff despawn? Want to keep the adventure in Minecraft without the danger of losing your prized possessions? In this add-on all your items are put in a gravestone when you die and you can go back and grab your stuff from your death location.
 
-![Graves Add-On Banner Image](./images/banner.png)
+![Graves Add-On Banner Image](./assets/banner.png)
 
 Unlike many other add-ons, this one works in all world, with all other add-ons, and with no experimental toggles.
 
