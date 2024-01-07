@@ -1,0 +1,150 @@
+{
+   "format_version": "1.20.50",
+   "minecraft:entity": {
+      "description": {
+         "identifier": "animation.hatchi_graves.grave_open",
+         "is_spawnable": false,
+         "is_summonable": true,
+         "is_experimental": false,
+         "scripts": {
+            "animate": [
+               { "open": "query.property('hatchi:is_dead')" }
+            ]
+         },
+         "properties": {
+            "hatchi:is_dead": {
+               "type": "bool",
+               "default": false
+            }
+         },
+         "animations": {
+            "open": "animation.grave.open"
+         }
+      },
+      "components": {
+         "minecraft:item_hopper": { },
+         "minecraft:collision_box": {
+            "width": 1,
+            "height": 1
+         },
+         "minecraft:health": {
+            "value": 5,
+            "max": 5,
+            "min": 1
+         },
+         "minecraft:fire_immune": { },
+         "minecraft:hurt_on_condition": {
+            "damage_conditions": [
+               {
+                  "filters": {
+                     "test": "in_lava",
+                     "subject": "self",
+                     "operator": "==",
+                     "value": true
+                  },
+                  "cause": "lava",
+                  "damage_per_tick": 0
+               }
+            ]
+         },
+         "minecraft:knockback_resistance": {
+            "value": 1
+         },
+         "minecraft:physics": { },
+         "minecraft:inventory": {
+            "container_type": "horse",
+            "inventory_size": 54,
+            "private": false
+         },
+         "minecraft:loot": {
+            "table": "loot_tables/empty.json"
+         },
+         "minecraft:damage_sensor": {
+            "triggers": [
+               {
+                  "on_damage": {
+                     "filters": {
+                        "any_of": [
+                           {
+                              "test": "has_damage",
+                              "value": "lava"
+                           },
+                           {
+                              "test": "has_damage",
+                              "value": "fall"
+                           }
+                        ]
+                     }
+                  },
+                  "deals_damage": false
+               },
+               {
+                  "on_damage": {
+                     "filters": {
+                        "all_of": [
+                           {
+                              "test": "has_damage",
+                              "value": "fatal"
+                           }
+                        ]
+                     },
+                     "event": "hatchi:kill"
+                  }
+               }
+            ]
+         },
+         "minecraft:interact": {
+            "interactions": [ {
+                  "on_interact": {
+                     "filters": {
+                        "all_of": [ {
+                              "test": "is_family",
+                              "subject": "other",
+                              "value": "player"
+                           }
+                        ]
+                     },
+                     "event": "hatchi:kill"
+                  }
+               }
+            ]
+         },
+         "minecraft:environment_sensor": {
+            "triggers": [
+               {
+                  "event": "hatchi:kill",
+                  "target": "self",
+                  "filters": {
+                     "test": "actor_health",
+                     "value": 1
+                  }
+               }
+            ]
+         },
+         "minecraft:buoyant": {
+            "apply_gravity": true,
+            "base_buoyancy": 1,
+            "simulate_waves": false,
+            "liquid_blocks": [ "water", "lava" ]
+         },
+         "minecraft:floats_in_liquid": { },
+         "minecraft:movement": {
+            "value": 0
+         },
+         "minecraft:navigation.walk": {
+            "can_sink": false
+         }
+      },
+      "events": {
+         "hatchi:kill": {
+            "set_property": {
+               "hatchi:is_dead": true
+            }
+            // TODO: Use queue_command once its non-experimental (expected 1.20.60)
+            // "queue_command": {
+            //    "command":"say I die!"
+            // }
+         }
+      }
+   }
+}

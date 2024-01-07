@@ -8,17 +8,16 @@ jobs:
     build:
         runs-on: ubuntu-latest
         steps:
-            - uses: actions/checkout@v2
-            - name: Build mcaddon files.
-              run: |
-                  tmp=(*_BP)
-                  tmp2=(*_RP)
-                  zip -r "release.mcaddon" "$tmp" "$tmp2"
+            - uses: actions/checkout@v3
+            - name: Build regolith project
+              uses: Bedrock-OSS/regolith-action@v1.0.3
+              with:
+                profile: build
             - name: Upload Release File
               uses: djnicholson/release-action@v2.11
               with:
                   token: ${{ secrets.GITHUB_TOKEN }}
                   release-name: 'Graves Addon'
                   tag-name: 'latest-build'
-                  asset-name: 'release.mcaddon'
-                  file: 'release.mcaddon'
+                  asset-name: 'graves.mcaddon'
+                  file: 'build/graves.mcaddon'

@@ -1,0 +1,23 @@
+{
+    "format_version": "1.10.0",
+    "minecraft:client_entity": {
+        "description": {
+            "identifier": "hatchi:grave",
+            "min_engine_version": "1.8.0",
+            "materials": {
+                "default": "entity"
+            },
+            "textures": {
+                "default": "textures/entity/hatchi_graves"
+            },
+            "geometry": {
+                "default": "geometry.grave"
+            },
+            "render_controllers": [ "controller.render.default" ],
+            "spawn_egg": {
+                "base_color": "#db7500",
+                "overlay_color": "#242222"
+            }
+        }
+    }
+}

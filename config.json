@@ -1,0 +1,83 @@
+{
+	"author": "Hatchibombotar",
+	"name": "Graves",
+	"packs": {
+		"behaviorPack": "./packs/BP",
+		"resourcePack": "./packs/RP"
+	},
+	"regolith": {
+		"dataPath": "./packs/data",
+		"filterDefinitions": {
+			"functioner": {
+				"url": "github.com/Hatchibombotar/useful-regolith-filters",
+				"version": "latest"
+			},
+			"import": {
+				"url": "github.com/Hatchibombotar/useful-regolith-filters",
+				"version": "latest"
+			},
+			"metadata": {
+				"url": "github.com/Hatchibombotar/useful-regolith-filters",
+				"version": "latest"
+			},
+			"package": {
+				"url": "github.com/Hatchibombotar/useful-regolith-filters",
+				"version": "1.1.0"
+			}
+		},
+		"profiles": {
+			"build": {
+				"export": {
+					"readOnly": false,
+					"target": "local"
+				},
+				"filters": [
+					{
+						"profile": "default"
+					},
+					{
+						"filter": "package",
+						"settings": {
+							"file_name": "build/graves",
+							"package": {
+								"mcaddon": {}
+							}
+						}
+					}
+				]
+			},
+			"default": {
+				"export": {
+					"readOnly": false,
+					"target": "development"
+				},
+				"filters": [
+					{
+						"filter": "functioner"
+					},
+					{
+						"filter": "import",
+						"settings": {
+							"imports": [
+								{
+									"from": "assets/pack_icon.png",
+									"to": "BP/pack_icon.png"
+								},
+								{
+									"from": "assets/pack_icon.png",
+									"to": "RP/pack_icon.png"
+								}
+							]
+						}
+					},
+					{
+						"filter": "metadata",
+						"settings": {
+							"url": "https://github.com/Hatchibombotar/graves-addon"
+						}
+					}
+				]
+			}
+		}
+	}
+}
