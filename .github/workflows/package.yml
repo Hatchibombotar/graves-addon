@@ -20,4 +20,4 @@ jobs:
                 files: |
                   build/graves.mcaddon
                   readme.md
-                  license.md
+                  licence.md
