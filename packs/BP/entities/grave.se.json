@@ -2,7 +2,7 @@
    "format_version": "1.20.50",
    "minecraft:entity": {
       "description": {
-         "identifier": "animation.hatchi_graves.grave_open",
+         "identifier": "hatchi:grave",
          "is_spawnable": false,
          "is_summonable": true,
          "is_experimental": false,
@@ -18,7 +18,7 @@
             }
          },
          "animations": {
-            "open": "animation.grave.open"
+            "open": "animation.hatchi_graves.grave_open"
          }
       },
       "components": {

@@ -8,7 +8,7 @@
                 "default": "entity"
             },
             "textures": {
-                "default": "textures/entity/hatchi_graves"
+                "default": "textures/hatchi/graves/entity/grave"
             },
             "geometry": {
                 "default": "geometry.grave"
