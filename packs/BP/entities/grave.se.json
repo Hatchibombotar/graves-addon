@@ -22,6 +22,9 @@
          }
       },
       "components": {
+         "minecraft:type_family": {
+            "family": ["grave", "inanimate", "mob"]
+         },
          "minecraft:item_hopper": { },
          "minecraft:collision_box": {
             "width": 1,
@@ -72,6 +75,10 @@
                            {
                               "test": "has_damage",
                               "value": "fall"
+                           },
+                           {
+                              "test": "has_damage",
+                              "value": "sonic_boom"
                            }
                         ]
                      }
