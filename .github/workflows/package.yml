@@ -11,7 +11,7 @@ jobs:
         steps:
             - uses: actions/checkout@v3
             - name: Build regolith project
-              uses: Bedrock-OSS/regolith-action@v1.0.3
+              uses: Bedrock-OSS/regolith-action@v1.3.0
               with:
                 profile: build
             - name: Release
