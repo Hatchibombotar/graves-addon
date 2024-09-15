@@ -138,6 +138,11 @@
          }
       },
       "events": {
+         "minecraft:entity_spawned": {
+            "queue_command": {
+               "command": "function hatchi/graves/grave_spawn"
+            }
+         },
          "hatchi:kill": {
             "add": {
                "component_groups": [
@@ -145,7 +150,7 @@
                ]
             },
             "queue_command": {
-               "command": "function hatchi/graves/grave_open"
+               "command": "execute at @s run function hatchi/graves/grave_open"
             }
          }
       }

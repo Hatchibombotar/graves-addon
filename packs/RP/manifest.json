@@ -2,9 +2,9 @@
     "format_version": 2,
     "header": {
         "name": "Graves",
-        "description": "By Hatchibombotar - v2.1.3",
+        "description": "By Hatchibombotar - v2.1.4",
         "uuid": "6181e449-d2b7-4482-8740-544e645bdd5f",
-        "version": [ 2, 1, 3 ],
+        "version": [ 2, 1, 4 ],
         "min_engine_version": [ 1, 20, 60 ],
         "pack_scope": "world"
     },
@@ -12,13 +12,13 @@
         {
             "type": "resources",
             "uuid": "0af8e8cc-ea42-469b-bbf7-7b5ee2cef6b4",
-            "version": [ 2, 1, 3 ]
+            "version": [ 2, 1, 4 ]
         }
     ],
     "dependencies": [
         {
             "uuid": "f5741565-6be8-4ad5-879a-130c644ff694",
-            "version": [ 2, 1, 3 ]
+            "version": [ 2, 1, 4 ]
         }
     ]
 }
